@@ -1,0 +1,21 @@
+{
+  "Port": 9100,
+  "Address": "127.0.0.1",
+  "EnableCluster": true,
+  "CleanClusterConfig": false,
+  "AuthenticationMode": "Password",
+  "Password": "Password",
+  "ClusterUsername": "CustomGejiaGarnetClusterMF",
+  "ClusterPassword": "Password",
+  "GossipDelay": 5,
+  "ClusterTimeout": 60,
+  "ReplicaSyncDelayMs": 5,
+  "CheckpointDir": "Custom/ClusterData/9100",
+  //"MainMemoryReplication": false,
+  //"OnDemandCheckpoint": false,
+  //"UseAofNullDevice": false,
+  //"CommitFrequencyMs": 10,
+  //"EnableFastCommit": true,
+  //"EnableAOF": true,
+  "EnableIncrementalSnapshots": true
+}

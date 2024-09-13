@@ -1,0 +1,13 @@
+{
+  "datacenter": "dc1",
+  "node_name": "Garnet-Cluster-Nodes 11000-11005",
+  "server": true,
+  "bootstrap_expect": 1,
+  "bind_addr": "127.0.0.1",
+  "client_addr": "0.0.0.0",
+  "data_dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8500",
+  "log_level": "INFO",
+  "ui_config": {
+    "enabled": true
+  }
+}

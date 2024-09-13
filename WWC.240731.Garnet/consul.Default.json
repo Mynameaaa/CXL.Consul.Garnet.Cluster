@@ -1,0 +1,41 @@
+{
+  //广播给集群中得其他节点的地址，bind参数可能无法绑定时，使用此参数。
+  "abvertise": "127.0.0.1",
+  //绑定集群通信的地址，这个ip地址应该是就集群内的其他节点可达，可找到的。 默认 0.0.0.0,将绑定机器的所有地址，同时把 ipv4地址告诉集群的其他人。
+  //如果指定[::],将广播IPV6地址。 如果存在多个IPV4/IPV6地址，启动则报错。
+  "bind": "127.0.0.1",
+  //指定交由 Consul 处理的DNS域， 默认consul, 比如执行 xxx.consul时，由 Consul 进行域名解析。
+  "domain": "consul.com",
+  //节点在集群中的名称。 在集群中一定是唯一的，默认为机器的HostName(主机名)。
+  "node": "19216811528500NodeName",
+  //加入Server节点，组成集群，无法加入,将启动失败， 注意集群部署时，推荐使用 retry-join, 将自动重试Join列表，直到成功。
+  "join": "127.0.0.1:8500",
+  //自动加入存在Server节点，组建数据中心, 如： -retry-join“consul.domain.internal” -retry-join “10.0.4.67”
+  "retry_join": [
+    "127.0.0.1:8500"
+  ],
+  //不推荐使用, 是否开启bootstrap 模式, 如果一个数据中心只有一个节点时， 使用此模式，允许选举自己为 Leader.
+  "bootstrap": false,
+  //Consul将会等到Sever节点数达到指定数值时，才会启动集群（自动选举Leader）。仅Server有此参数, 注意这个值集群中所有节点要一致， 或着仅指定一个节点。
+  "bootstrap-expect": 3,
+  //客户端连接Server的地址，默认127.0.0.1，可绑定多个。
+  "client": [
+    "127.0.0.1:8585"
+  ],
+  //启用内置 Web UI 和必要的 HTTP路由。
+  "ui": {
+    //是否启用 ui
+    "enable": true
+  },
+  //指定要加载的配置文件，可多次指定。后面的配置将与前面的配置进行Merge。单个KV将直接代替，列表类型将进行追加。
+  "config-file": "consul-defaultNodeNoService-8501.json",
+  //配置目录，将加载目录中的 .hcl 或 .json 格式配置。 注意子路径不会加载。
+  "config-dir": "ConfigDirectory",
+  //Agent存储状态的的数据目录
+  "data-dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8500",
+  //Consul开发模式，快速启动一个Consul Agent。 （此模式下， 所以持久化将关闭，适用内存）此模式适用于开发阶段, 
+  //在此模式下Connect也是启用的，此模式不要用于生产级场景。
+  "dev": false,
+  //配置片段，可指定多次。
+  "hcl": ""
+}

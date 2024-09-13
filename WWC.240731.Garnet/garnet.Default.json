@@ -1,0 +1,201 @@
+{
+  /******************************************************************************************************/
+  /*                                          Garnet默认配置文件                                        */
+  /******************************************************************************************************/
+
+  /* 运行服务器的端口 */
+  "Port": 6379,
+  /* 绑定服务器的IP地址（默认：任意） */
+  "Address": null,
+  /* 已使用的日志内存总量（以字节为单位）（四舍五入到2的幂次方） */
+  "MemorySize": "16g",
+  /* 每页的大小（以字节为单位）（四舍五入到2的幂次方） */
+  "PageSize": "32m",
+  /* 磁盘上每个日志段的大小（以字节为单位）（四舍五入到2的幂） */
+  "SegmentSize": "1g",
+  /* 哈希索引的大小（以字节为单位）（四舍五入到2的幂） */
+  "IndexSize": "128m",
+  /* 哈希索引的最大大小（以字节为单位）（四舍五入到2的幂） */
+  "IndexMaxSize": "",
+  /* 保持可变的日志内存百分比 */
+  "MutablePercent": 90,
+  /* 使用的对象存储日志内存总量，包括堆内存（以字节为单位） */
+  "ObjectStoreTotalMemorySize": "",
+  /* 对象存储日志内存使用的字节数，不包括堆内存 */
+  "ObjectStoreLogMemorySize": "32m",
+  /* 每个对象存储页面的大小（以字节为单位）（四舍五入到2的幂） */
+  "ObjectStorePageSize": "1m",
+  /* 磁盘上每个对象存储日志段的大小（以字节为单位）（四舍五入到2的幂） */
+  "ObjectStoreSegmentSize": "32m",
+  /* 对象存储哈希索引的大小（以字节为单位）（四舍五入到2的幂） */
+  "ObjectStoreIndexSize": "16m",
+  /* 对象存储哈希索引的最大大小（以字节为单位）（四舍五入到2的幂） */
+  "ObjectStoreIndexMaxSize": "",
+  /* 保持可变的对象存储日志内存百分比 */
+  "ObjectStoreMutablePercent": 90,
+  /* 启用记录（混合日志）到存储的分层，以支持大于内存的存储。使用--logdir指定存储目录 */
+  "EnableStorageTier": false,
+  /* 当从主存的内存中不可变区域或存储设备读取记录时，将它们复制到日志的末尾. */
+  "CopyReadsToTail": false,
+  /* 当从对象存储的内存中不可变区域或存储设备读取记录时，将它们复制到日志的末尾. */
+  "ObjectStoreCopyReadsToTail": false,
+  /* 如果启用了存储分层（--Storage），则分层记录（混合日志）的存储目录。如果未指定，则使用当前目录. */
+  "LogDir": null,
+  /* 检查点的存储目录。如果未指定，则使用logdir. */
+  "CheckpointDir": null,
+  /* 从最新的检查点和日志（如果存在）中恢复. */
+  "Recover": false,
+  /* 禁用服务器上的发布/订阅功能 */
+  "DisablePubSub": false,
+  /* 启用增量快照 */
+  "EnableIncrementalSnapshots": false,
+  /* 用于发布/订阅的日志页面大小（四舍五入到2的幂） */
+  "PubSubPageSize": "4k",
+  /* 禁用对数据结构对象的支持 */
+  "DisableObjects": false,
+  /* 启用群集 */
+  "EnableCluster": false,
+  /* 从干净的集群配置开始 */
+  "CleanClusterConfig": false,
+  /* Garnet的身份验证模式。这会影响AUTH命令的处理方式以及客户端如何针对Garnet进行身份验证。值选项：NoAuth、密码、Aad、ACL */
+  "AuthenticationMode": "NoAuth",
+  /* 用于密码身份验证的身份验证字符串. */
+  "Password": null,
+  /* 用于验证集群内通信的用户名. */
+  "ClusterUsername": null,
+  /* 用于验证集群内通信的密码. */
+  "ClusterPassword": null,
+  /* 外部ACL用户文件. */
+  "AclFile": null,
+  /* AAD身份验证的权限. */
+  "AadAuthority": "https://login.microsoftonline.com",
+  /* 用于AAD身份验证的AAD令牌的受众。应该是逗号分隔的字符串. */
+  "AadAudiences": null,
+  /* 用于AAD身份验证的AAD令牌的发行者。应该是逗号分隔的字符串. */
+  "AadIssuers": null,
+  /* 用于AAD身份验证的授权客户端应用程序ID。应该是逗号分隔的字符串. */
+  "AuthorizedAadApplicationIds": null,
+  /* 是否将用户名验证为ObjectId或有效的Group ObjectId（如果声明中存在）-用于ACL设置. */
+  "AadValidateUsername": false,
+  /* 启用预写日志记录（仅追加文件）. */
+  "EnableAOF": false,
+  /* 使用的AOF内存缓冲区总字节数（四舍五入到2的幂）-超过此限制后溢出到磁盘 */
+  "AofMemorySize": "64m",
+  /* 每个AOF页面的大小（以字节为单位）（四舍五入到2的幂次方） */
+  "AofPageSize": "4m",
+  /* 提前写入日志（仅追加文件）提交问题频率（毫秒）。0=每次操作立即发出提交，-1=使用COMMITAOF命令手动发出提交 */
+  "CommitFrequencyMs": 0,
+  /* 等待AOF刷新提交，然后将结果返回给客户端。警告：将大大增加操作延迟. */
+  "WaitForCommit": false,
+  /* AOF的最大大小（四舍五入到2的幂），超过此值将应用不安全的截断。除非采取检查点，否则左空的AOF将无限增长 */
+  "AofSizeLimit": "",
+  /* 背景混合日志压缩频率（秒）。0=禁用（在检查点之前执行压缩） */
+  "CompactionFrequencySecs": 0,
+  /* 混合原木压实类型。值选项： */
+  /*  无-无压实 */
+  /*  移位-移位开始地址而不压缩（数据丢失） */
+  /*  扫描-扫描旧页面并将实时记录移动到尾部（无数据丢失） */
+  /*  查找-在压缩范围内查找每条记录，使用哈希链进行记录活性检查（无数据丢失） */
+  "CompactionType": "None",
+  /* 应用压缩策略（类型）后立即强制删除非活动段. */
+  /* 如果为false，则执行检查点以实际从磁盘中删除旧数据文件. */
+  "CompactionForceDelete": false,
+  /* 压缩触发之前在磁盘上创建的日志段数. */
+  "CompactionMaxSegments": 32,
+  /* 压缩触发之前在磁盘上创建的对象存储日志段数. */
+  "ObjectStoreCompactionMaxSegments": 32,
+  /* 压缩触发之前在磁盘上创建的对象存储日志段数. */
+  "GossipSamplePercent": 100,
+  /* 集群模式八卦协议每个节点睡眠（以秒为单位）延迟发送更新的配置. */
+  "GossipDelay": 5,
+  /* 群集节点超时是指节点必须无法访问的秒数. */
+  "ClusterTimeout": 60,
+  /* 在群集模式下使用TLS连接时客户端目标主机的名称. */
+  "ClusterTlsClientTargetHost": "GarnetTest",
+  /* 启用TLS. */
+  "EnableTLS": false,
+  /* TLS证书文件名（例如：testcert.pfx）. */
+  "CertFileName": null,
+  /* TLS证书密码（示例：占位符）. */
+  "CertPassword": null,
+  /* TLS证书使用者名称. */
+  "CertSubjectName": null,
+  /* TLS证书刷新频率（秒）（0表示禁用）. */
+  "CertificateRefreshFrequency": 0,
+  /* 服务器是否需要客户端TLS证书. */
+  "ClientCertificateRequired": true,
+  /* 在服务器端建立的客户端是否需要服务器TLS证书，例如用于集群八卦和复制. */
+  "ServerCertificateRequired": true,
+  /* 证书验证的证书吊销检查模式（NoCheck、在线、离线）. */
+  "CertificateRevocationCheckMode": "NoCheck",
+  /* 包含要验证的颁发者证书的文件的完整路径。如果为空或null，则不会对发卡机构进行验证. */
+  "IssuerCertificatePath": "",
+  /* 跟踪各种事件的延迟. */
+  "LatencyMonitor": false,
+  /* 度量采样频率（秒）。值0禁用度量监控任务. */
+  "MetricsSamplingFrequency": 0,
+  /* 启用安静模式不会打印服务器版本和文本艺术. */
+  "QuietMode": false,
+  /* 日志记录级别。值选项：跟踪、调试、信息、警告、错误、严重、无 */
+  "LogLevel": "Warning",
+  /* 禁用控制台记录器. */
+  "DisableConsoleLogger": false,
+  /* 启用文件记录器并写入指定路径. */
+  "FileLogger": null,
+  /* 线程池中的最小工作线程和完成线程数，0使用系统默认值. */
+  "ThreadPoolMinThreads": 0,
+  /* 线程池中的最大工作线程数和完成线程数，0使用系统默认值. */
+  "ThreadPoolMaxThreads": 0,
+  /* 使用Azure页面块进行存储，而不是本地存储. */
+  "UseAzureStorage": false,
+  /* 建立与Azure块存储的连接时使用的连接字符串. */
+  "AzureStorageConnectionString": null,
+  /* 我们是否应该限制检查点的磁盘IO以及限制的程度：-1-禁用限制；>=0-在单独的任务中运行检查点刷新，在每次WriteAsync后休眠指定时间 */
+  "CheckpointThrottleFlushDelayMs": 0,
+  /* 编写AOF时使用FastCommit. */
+  "EnableFastCommit": true,
+  /* Throttle FastCommit每K次提交写入一次元数据. */
+  "FastCommitThrottleFreq": 1000,
+  /* 限制每个会话的最大未完成网络发送. */
+  "NetworkSendThrottleMax": 8,
+  /* 无论我们是对MGET使用分散收集IO还是一批连续的GET操作，都有助于使磁盘随机读取IO饱和. */
+  "EnableScatterGatherGet": false,
+  /* 我们是否应该限制副本同步以及限制多少（毫秒）：0-禁用限制 */
+  "ReplicaSyncDelayMs": 5,
+  /* 使用主内存复制模型. */
+  "MainMemoryReplication": false,
+  /* 与主内存复制模型一起使用。采用按需检查点，以避免在连接时丢失数据 */
+  "OnDemandCheckpoint": false,
+  /* 对于主内存复制，使用空设备进行AOF。确保没有磁盘IO，但在复制过程中可能会导致数据丢失. */
+  "UseAofNullDevice": false,
+  /* 在Linux上使用本机设备进行本地存储 */
+  "UseNativeDeviceLinux": false,
+  /* #,#,...,#: 对于主存储区，每个恢复箱中的记录大小按大小递增的顺序排列。取代默认设置--启用恢复；不能与-reviv一起使用，只能在链中使用 */
+  "RevivBinRecordSizes": null,
+  /* #,#,...,#: 对于主存储，每个存储箱中的记录数：默认值（未指定）：如果指定了恢复存储箱记录大小，则每个存储箱为256条记录#（一个值）：
+    如果已指定恢复存储箱的记录大小，那么所有存储箱都有此数量的记录，否则错误#、#、…、#（多个值）：如果指定了reviv bin记录大小，
+    则它必须与该数组的大小相同，否则error将取代默认值--enable reviv；不能与-reviv一起使用，只能在链中使用 */
+  "RevivBinRecordCounts": null,
+  /* #：内存中可变日志空间的一部分，从最高日志地址到只读区域，有资格恢复。适用于主存储和对象存储。 */
+  "RevivifiableFraction": 1.0,
+  /* 使用默认的2倍大小的箱子指定恢复的快捷方式。此默认值可以通过仅在链中恢复或通过恢复箱记录大小和恢复箱记录计数的组合来覆盖. */
+  "EnableRevivification": false,
+  /* 如果在最合适的存储箱中无法满足搜索要求，请搜索此数量的下一个更高的存储箱。需要启用revolution或rconeviv存储箱记录大小和revolution存储箱记录计数的组合 */
+  "RevivNumberOfBinsToSearch": 0,
+  /* 在找到第一个匹配项后，要扫描以获得最佳匹配的记录数。需要--启用恢复或恢复箱记录大小和恢复箱记录计数的组合0：使用第一次拟合#：在第一次拟合后将扫描限制为如此多的记录，最多不超过箱的记录计数 */
+  "RevivBinBestFitScanLimit": 0,
+  /* 仅在标记链中恢复带墓碑的记录（不使用自由列表）。不能与恢复箱记录大小或恢复箱记录计数一起使用。默认情况下传播到对象存储. */
+  "RevivInChainOnly": false,
+  /* 对象存储的单个空闲记录箱中的记录数。与主存储区不同，Object存储区只有一个bin。除非主存储正在使用免费记录列表，否则将被忽略. */
+  "RevivObjBinRecordCount": 256,
+  /* *SCAN命令一次迭代中返回的项目限制 */
+  "ObjectScanCountLimit": 1000,
+  /* 服务器上管理员用户可以从中加载自定义命令二进制文件的目录列表 */
+  "ExtensionBinPaths": null,
+  /* 允许从数字无符号程序集中加载自定义命令（不推荐） */
+  "ExtensionAllowUnsignedAssemblies": false,
+  /* 索引调整检查频率（秒） */
+  "IndexResizeFrequencySecs": 60,
+  /* 溢出桶计数超过总索引大小的百分比，以触发索引大小调整 */
+  "IndexResizeThreshold": 50
+}

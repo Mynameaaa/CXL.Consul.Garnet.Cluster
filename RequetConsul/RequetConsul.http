@@ -1,0 +1,6 @@
+@RequetConsul_HostAddress = http://localhost:5259
+
+GET {{RequetConsul_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

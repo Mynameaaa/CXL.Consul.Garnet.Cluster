@@ -1,0 +1,6 @@
+@WWC.Consul.Check.API_HostAddress = http://localhost:5249
+
+GET {{WWC.Consul.Check.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

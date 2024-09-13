@@ -1,0 +1,150 @@
+[
+  //集群可以启动，但是不会故障转移
+  [
+    {
+      "datacenter": "dc1",
+      "data_dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8500",
+      "log_level": "INFO",
+      "server": true,
+      "node_name": "Garnet-Cluster-Nodes11000-11005-0",
+      "ui_config": {
+        "enabled": true
+      },
+      "bind_addr": "127.0.0.1",
+      "client_addr": "127.0.0.1",
+      "advertise_addr": "127.0.0.1",
+      "bootstrap_expect": 3,
+      "ports": {
+        "http": 8500,
+        "grpc_tls": 8503,
+        "dns": 8600,
+        "server": 8300,
+        "serf_lan": 8301,
+        "serf_wan": 8302
+      }
+      //"log_file": "G:/Consul/consul_1.19.1_windows_amd64/var/8500/log.txt",
+    },
+    {
+      "datacenter": "dc1",
+      "data_dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8501",
+      "log_level": "INFO",
+      "server": true,
+      "node_name": "Garnet-Cluster-Nodes11000-11005-1",
+      "ui_config": {
+        "enabled": true
+      },
+      "bind_addr": "127.0.0.1",
+      "client_addr": "127.0.0.1",
+      "advertise_addr": "127.0.0.1",
+      "bootstrap_expect": 3,
+      "ports": {
+        "http": 8510,
+        "grpc_tls": 8513,
+        "dns": 8610,
+        "server": 8310,
+        "serf_lan": 8311,
+        "serf_wan": 8312
+      }
+      //"log_file": "G:/Consul/consul_1.19.1_windows_amd64/var/8501/log.txt",
+      //"retry_join": [ "127.0.0.1:8500", "127.0.0.1:8502" ]
+    },
+    {
+      "datacenter": "dc1",
+      "data_dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8502",
+      "log_level": "INFO",
+      "server": true,
+      "node_name": "Garnet-Cluster-Nodes11000-11005-2",
+      "ui_config": {
+        "enabled": true
+      },
+      "bind_addr": "127.0.0.1",
+      "client_addr": "127.0.0.1",
+      "advertise_addr": "127.0.0.1",
+      "bootstrap_expect": 3,
+      "ports": {
+        "http": 8520,
+        "grpc_tls": 8523,
+        "dns": 8620,
+        "server": 8320,
+        "serf_lan": 8321,
+        "serf_wan": 8322
+      }
+      //"log_file": "G:/Consul/consul_1.19.1_windows_amd64/var/8502/log.txt",
+      //"retry_join": [ "127.0.0.1:8500", "127.0.0.1:8501" ]
+    }
+  ],
+  [
+    {
+      "datacenter": "dc1",
+      "data_dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8500",
+      "log_level": "INFO",
+      "server": true,
+      "node_name": "Garnet-Cluster-Nodes11000-11005-0",
+      "ui_config": {
+        "enabled": true
+      },
+      "bind_addr": "127.0.0.1",
+      "client_addr": "127.0.0.1",
+      "advertise_addr": "127.0.0.1",
+      "bootstrap_expect": 3,
+      "ports": {
+        "http": 8500,
+        "grpc_tls": 8503,
+        "dns": 8600,
+        "server": 8300,
+        "serf_lan": 8301,
+        "serf_wan": 8302
+      },
+      "retry_join": [ "127.0.0.1:8311", "127.0.0.1:8321" ]
+      //"log_file": "G:/Consul/consul_1.19.1_windows_amd64/var/8500/log.txt",
+    },
+    {
+      "datacenter": "dc1",
+      "data_dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8501",
+      "log_level": "INFO",
+      "server": true,
+      "node_name": "Garnet-Cluster-Nodes11000-11005-1",
+      "ui_config": {
+        "enabled": true
+      },
+      "bind_addr": "127.0.0.1",
+      "client_addr": "127.0.0.1",
+      "advertise_addr": "127.0.0.1",
+      "bootstrap_expect": 3,
+      "ports": {
+        "http": 8510,
+        "grpc_tls": 8513,
+        "dns": 8610,
+        "server": 8310,
+        "serf_lan": 8311,
+        "serf_wan": 8312
+      },
+      "retry_join": [ "127.0.0.1:8301", "127.0.0.1:8321" ]
+      //"retry_join": [ "127.0.0.1:8500", "127.0.0.1:8502" ]
+    },
+    {
+      "datacenter": "dc1",
+      "data_dir": "G:/Consul/consul_1.19.1_windows_amd64/var/8502",
+      "log_level": "INFO",
+      "server": true,
+      "node_name": "Garnet-Cluster-Nodes11000-11005-2",
+      "ui_config": {
+        "enabled": true
+      },
+      "bind_addr": "127.0.0.1",
+      "client_addr": "127.0.0.1",
+      "advertise_addr": "127.0.0.1",
+      "bootstrap_expect": 3,
+      "ports": {
+        "http": 8520,
+        "grpc_tls": 8523,
+        "dns": 8620,
+        "server": 8320,
+        "serf_lan": 8321,
+        "serf_wan": 8322
+      },
+      "retry_join": [ "127.0.0.1:8301", "127.0.0.1:8311" ]
+      //"log_file": "G:/Consul/consul_1.19.1_windows_amd64/var/8502/log.txt",
+    }
+  ]
+]
